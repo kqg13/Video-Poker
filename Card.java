@@ -1,30 +1,37 @@
-// **************************************************************
-// Programming Assignment #4 (Video Poker)
-// Written by Kedar Gangopadhyay (kg2576)
-// This is the Card class which contains [ ] methods
-// **************************************************************
+/**
+*	@author Kedar Gangopadhyay
+*/
 
-public class Card {
-	private int suit; // use integer 1-4 to encode the suit
-	private int value; // use integers 1-13 to encode the values
-	
-	public Card (int s, int v) { // @param s the suits @param v the values
-		suit = s;
-		value = v;
-	} // end constructor
-	
-	public int Suit () { // @return the suit
-		return suit;
-	} // end method
-	
-	public int Value () { // @return the value
-		return value;
-	} // end method
-	
-	public String toString () { // @return cardName the individual card
+public class Card implements Comparable<Card> {
+	private int suit; // use integer 1-4 to encode suit
+	private int value; // use integers 1-13 to encode values
+
+	public Card (int s, int v) {
+		this.suit = s;
+		this.value = v;
+	}
+
+	/**
+	* @return suit of the Card
+	*/
+	public int getSuit () {
+		return this.suit;
+	}
+
+	/**
+	* @return value of the Card
+	*/
+	public int getValue () {
+		return this.value;
+	}
+
+	/**
+	* @return the individual name of card
+	*/
+	public String toString () {
 		String VALUE_NAME, SUIT_NAME;
 		String cardName;
-		
+
 		switch (suit)
 		{
 		case 1: SUIT_NAME = "Clubs"; break;
@@ -32,8 +39,8 @@ public class Card {
 		case 3: SUIT_NAME = "Hearts"; break;
 		case 4: SUIT_NAME = "Spades"; break;
 		default: SUIT_NAME = " "; break;
-		} // end suit switch
-	
+		}
+
 		switch (value)
 		{
 		case 1: VALUE_NAME = "Ace"; break;
@@ -50,11 +57,33 @@ public class Card {
 		case 12: VALUE_NAME = "Queen"; break;
 		case 13: VALUE_NAME = "King"; break;
 		default: VALUE_NAME = " "; break;
-		} // end value switch
-		
+		}
+
 		cardName = VALUE_NAME + " of " + SUIT_NAME;
 		return cardName;
-	
-	} //end method
-	
+	}
+
+	/**
+	* @return BEFORE, AFTER, or EQUAL comparison of two cards
+	*/
+	public int compareTo(Card c) {
+			final int BEFORE = -1;
+			final int EQUAL = 0;
+			final int AFTER = 1;
+
+			if(this.suit == c.getSuit()) {
+				if(this.value == c.getValue()) {
+					return EQUAL;
+				} else if(this.value < c.getValue()) {
+					return BEFORE;
+				} else {
+					return AFTER;
+				}
+			} else if (this.suit < c.getSuit()) {
+				return BEFORE;
+			} else {
+				return AFTER;
+			}
+	}
+
 } // end class Card
