@@ -1,5 +1,4 @@
-/**
-*	@author Kedar Gangopadhyay
+/**	@author Kedar Gangopadhyay
 */
 
 public class Card implements Comparable<Card> {

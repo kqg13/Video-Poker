@@ -14,9 +14,9 @@ public class Game {
 
   // Game Hand
   private final String ROYAL_FLUSH = "Royal Flush";
-  private final String STRAIGHT_FLUSH	= "Straight Flush";
-  private final String FOUR_OF_A_KIND	= "Four of a kind";
-  private final String FULL_HOUSE	= "Full House";
+  private final String STRAIGHT_FLUSH = "Straight Flush";
+  private final String FOUR_OF_A_KIND = "Four of a kind";
+  private final String FULL_HOUSE = "Full House";
   private final String FLUSH = "Flush";
   private final String STRAIGHT	= "Straight";
   private final String THREE_OF_A_KIND = "Three of a kind";
@@ -97,7 +97,8 @@ public class Game {
 
       while(true) {
         String tempValue = scan.nextLine();
-        if(tempValue.equals("1") || tempValue.equals("2") || tempValue.equals("3") || tempValue.equals("4") || tempValue.equals("5")){
+        if(tempValue.equals("1") || tempValue.equals("2") || tempValue.equals("3") || tempValue.equals("4") ||
+         tempValue.equals("5")){
           int tempInputValue = Integer.parseInt(tempValue);
           rejectedCards.add(playersHand.get(tempInputValue-1));
         } else if(tempValue.equals("0")) {
