@@ -18,9 +18,9 @@ The card deck contains 52 cards, 13 of each suit. At the beginning of the game, 
 Compile
 -------
 
-To compile the Java classes for the program, execute the follow command: ::
+To compile the Java classes for the program, execute the follow command:
 
-  javac *.java
+  `javac *.java`
 
 This generates five .class files in the current directory.
 
@@ -29,4 +29,4 @@ Run class
 
 To run the main class, execute the follow command: ::
 
-  java VideoPoker
+  `java VideoPoker`
