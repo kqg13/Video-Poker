@@ -27,6 +27,6 @@ This generates five .class files in the current directory.  All classes were wri
 Run class
 ---------
 
-To run the main class, execute the follow command:
+To run the main class, execute the following command:
 
   `java VideoPoker`
